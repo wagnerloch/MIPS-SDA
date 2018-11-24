@@ -4,14 +4,14 @@ USE IEEE.std_logic_unsigned.all;
 USE IEEE.std_logic_arith.all;
 USE work.matrix32x32.all; 
 
-Entity RegBank IS
-port (
-	WriteReg: 						in std_logic_vector(31 downto 0);
-	reset, clock, EnableWrite: 		in std_logic;
-	ReadReg1, ReadReg2, WriteRegNr: in std_logic_vector(4 downto 0);
-	out1, out2: 					out std_logic_vector(31 downto 0)
-);
-end RegBank;
+ENTITY RegBank IS
+	PORT (
+		WriteReg: 						in std_logic_vector(31 downto 0);
+		reset, clock, EnableWrite: 		in std_logic;
+		ReadReg1, ReadReg2, WriteRegNr: in std_logic_vector(4 downto 0);
+		out1, out2: 					out std_logic_vector(31 downto 0)
+	);
+END RegBank;
 
 ARCHITECTURE behavioral OF RegBank IS
 
