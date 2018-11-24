@@ -1,4 +1,4 @@
-Library IEEE;
+LIBRARY IEEE;
 Use ieee.std_logic_1164.all;
 Use ieee.std_logic_unsigned.all;
 Use ieee.numeric_std.all;
@@ -26,10 +26,10 @@ begin
 				sinal_saida <= entrada0 or entrada1;
 			when "0010" => --soma
 				sinal_saida <= entrada0 + entrada1;
-			when "0011" => --multiplicacao
-				sinal_saida <= entrada0 * entrada1;
-			when "0100" => --divisao
-				sinal_saida <= entrada0 / entrada1;
+			--when "0011" => --multiplicacao
+				--sinal_saida <= entrada0 * entrada1;
+			--when "0100" => --divisao
+				--sinal_saida <= entrada0 / entrada1;
 			when "0101" => --nor
 				sinal_saida <= entrada0 nor entrada1;
 			when "0110" => --subtracao
@@ -64,5 +64,5 @@ begin
 	zero <= '1' when sinal_saida = "00000000000000000000000000000000"
 		else '0';
 	
-	output <= sinal_saida;
+	saida <= sinal_saida;
 end ULA_ARQ;
