@@ -5,4 +5,7 @@ Repositório destinado ao desenvolvimento do trabalho prático final da discipli
 TO-DO LIST:
 
 - [x] ~~Criar repositório GitHub~~
-- [ ] Dividir tarefas
+- [x] ~~Dividir tarefas~~
+- [ ] Memórias e Barreiras Temporais - Henrique
+- [ ] Estruturas de Controle - Wagner
+- [ ] Componentes - André
