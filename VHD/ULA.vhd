@@ -15,6 +15,7 @@ end ULA;
 
 architecture ULA_ARQ of ULA is
 	signal sinal_saida: std_logic_vector(31 downto 0);
+	
 begin
 
 	process(operacao, entrada0, entrada1)
@@ -26,10 +27,10 @@ begin
 				sinal_saida <= entrada0 or entrada1;
 			when "0010" => --soma
 				sinal_saida <= entrada0 + entrada1;
-			--when "0011" => --multiplicacao
-				--sinal_saida <= entrada0 * entrada1;
+			when "0011" => --multiplicacao
+				sinal_saida <= std_logic_vector(unsigned (entrada0 * entrada1))(31 downto 0);
 			--when "0100" => --divisao
-				--sinal_saida <= entrada0 / entrada1;
+				--sinal_saida <= std_logic_vector(unsigned (entrada0 / entrada1));
 			when "0101" => --nor
 				sinal_saida <= entrada0 nor entrada1;
 			when "0110" => --subtracao
