@@ -1,0 +1,5 @@
+|Upsampling
+clk => ~NO_FANOUT~
+saida <= <GND>
+
+
