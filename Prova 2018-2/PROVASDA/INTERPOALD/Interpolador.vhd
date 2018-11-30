@@ -33,27 +33,27 @@ begin
 
 	process(clock)
 	begin
-		loop1:	FOR i IN 0 TO 512 
-			loop2: FOR j IN 0 TO 512 	
-				loop3: FOR k IN 0 TO 5 
+		loop1:	FOR i IN 0 TO 512 loop
+			loop2: FOR j IN 0 TO 512 loop
+				loop3: FOR k IN 0 TO 5 loop
 					if (k = 0) then
 						EE <= amostraIN(i + j + k);
 					elsif (k = 1) then
-						FF <= (amostraIN(i + j + k) << 2) + amostraIN(i + j + k);
+						FF <= (amostraIN(i + j + k) sll 2) + amostraIN(i + j + k);
 					elsif (k = 2) then
-						GG <= (amostraIN(i + j + k) << 4) + (amostraIN(i + j + k) << 2);
+						GG <= (amostraIN(i + j + k) sll 4) + (amostraIN(i + j + k) sll 2);
 					elsif (k = 3) then
-						HH <= (amostraIN(i + j + k) << 4) + (amostraIN(i + j + k) << 2);
+						HH <= (amostraIN(i + j + k) sll 4) + (amostraIN(i + j + k) sll 2);
 					elsif (k = 4) then
-						II <= (amostraIN(i + j + k) << 2) + amostraIN(i + j + k);
+						II <= (amostraIN(i + j + k) sll 2) + amostraIN(i + j + k);
 					elsif (k = 5) then
 						JJ <= amostraIN(i + j + k);
 					end if;
-				END loop3;
+				END loop;
 				amostraOUT <= amostraIN(i + j);
 				amostraOUT2 <= EE - FF + GG + HH - II + JJ;
-			END loop2;
-		END loop1;
+			END loop;
+		END loop;
 	end process;
 	
 end behavioral;
