@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="MIPS">
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS|ULA:ULA1|lpm_mult:Mult0" CBX_FILE_NAME="mult_l8t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|MIPS|memData:MEMORIADADOS|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_74d1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

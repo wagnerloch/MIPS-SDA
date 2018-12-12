@@ -1,0 +1,1447 @@
+TimeQuest Timing Analyzer report for MIPS
+Wed Dec 12 01:56:47 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clock'
+ 12. Slow Model Hold: 'clock'
+ 13. Slow Model Minimum Pulse Width: 'clock'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clock'
+ 24. Fast Model Hold: 'clock'
+ 25. Fast Model Minimum Pulse Width: 'clock'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; MIPS                                                              ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5F256C6                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 88.39 MHz ; 88.39 MHz       ; clock      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clock ; -10.314 ; -4852.045     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.522 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -2.000 ; -2106.680             ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                                          ;
++---------+--------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -10.314 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.016      ; 11.366     ;
+; -10.267 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.009      ; 11.312     ;
+; -10.085 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.014      ; 11.135     ;
+; -10.032 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.009      ; 11.077     ;
+; -10.024 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.010      ; 11.070     ;
+; -10.004 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.015      ; 11.055     ;
+; -9.971  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; -0.003     ; 11.004     ;
+; -9.865  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.026      ; 10.927     ;
+; -9.861  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[47] ; clock        ; clock       ; 1.000        ; 0.013      ; 10.910     ;
+; -9.861  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[51] ; clock        ; clock       ; 1.000        ; 0.013      ; 10.910     ;
+; -9.858  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[46] ; clock        ; clock       ; 1.000        ; 0.014      ; 10.908     ;
+; -9.836  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[40] ; clock        ; clock       ; 1.000        ; 0.001      ; 10.873     ;
+; -9.818  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.873     ;
+; -9.740  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[62] ; clock        ; clock       ; 1.000        ; 0.014      ; 10.790     ;
+; -9.740  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.016      ; 10.792     ;
+; -9.738  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.026      ; 10.800     ;
+; -9.693  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.009      ; 10.738     ;
+; -9.691  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.746     ;
+; -9.675  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[67] ; clock        ; clock       ; 1.000        ; 0.012      ; 10.723     ;
+; -9.636  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.024      ; 10.696     ;
+; -9.619  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[64] ; clock        ; clock       ; 1.000        ; 0.018      ; 10.673     ;
+; -9.595  ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.026      ; 10.657     ;
+; -9.588  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[39] ; clock        ; clock       ; 1.000        ; 0.001      ; 10.625     ;
+; -9.586  ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.015      ; 10.637     ;
+; -9.583  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.638     ;
+; -9.579  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[60] ; clock        ; clock       ; 1.000        ; 0.013      ; 10.628     ;
+; -9.575  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.020      ; 10.631     ;
+; -9.569  ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.016      ; 10.621     ;
+; -9.555  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.025      ; 10.616     ;
+; -9.549  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[63] ; clock        ; clock       ; 1.000        ; 0.017      ; 10.602     ;
+; -9.548  ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.603     ;
+; -9.539  ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.008      ; 10.583     ;
+; -9.527  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[50] ; clock        ; clock       ; 1.000        ; 0.016      ; 10.579     ;
+; -9.527  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[45] ; clock        ; clock       ; 1.000        ; 0.016      ; 10.579     ;
+; -9.522  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; 0.007      ; 10.565     ;
+; -9.522  ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.009      ; 10.567     ;
+; -9.511  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.014      ; 10.561     ;
+; -9.509  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.024      ; 10.569     ;
+; -9.508  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[67] ; clock        ; clock       ; 1.000        ; 0.012      ; 10.556     ;
+; -9.500  ; flipflop:PIPE2|Temp[18]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.555     ;
+; -9.494  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[48] ; clock        ; clock       ; 1.000        ; 0.014      ; 10.544     ;
+; -9.488  ; flipflop:PIPE2|Temp[14]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.016      ; 10.540     ;
+; -9.477  ; flipflop:PIPE2|Temp[50]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.532     ;
+; -9.468  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[66] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.523     ;
+; -9.460  ; flipflop:PIPE2|Temp[48]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.026      ; 10.522     ;
+; -9.458  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.009      ; 10.503     ;
+; -9.456  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.511     ;
+; -9.453  ; flipflop:PIPE2|Temp[18]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.012      ; 10.501     ;
+; -9.452  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[64] ; clock        ; clock       ; 1.000        ; 0.018      ; 10.506     ;
+; -9.450  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.010      ; 10.496     ;
+; -9.448  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.020      ; 10.504     ;
+; -9.441  ; flipflop:PIPE2|Temp[14]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.009      ; 10.486     ;
+; -9.430  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.015      ; 10.481     ;
+; -9.430  ; flipflop:PIPE2|Temp[50]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.012      ; 10.478     ;
+; -9.428  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.025      ; 10.489     ;
+; -9.428  ; flipflop:PIPE2|Temp[51]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.483     ;
+; -9.420  ; flipflop:PIPE2|Temp[49]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; -0.004     ; 10.452     ;
+; -9.416  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[61] ; clock        ; clock       ; 1.000        ; 0.018      ; 10.470     ;
+; -9.413  ; flipflop:PIPE2|Temp[48]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.468     ;
+; -9.412  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[47] ; clock        ; clock       ; 1.000        ; 0.023      ; 10.471     ;
+; -9.412  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[51] ; clock        ; clock       ; 1.000        ; 0.023      ; 10.471     ;
+; -9.409  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[46] ; clock        ; clock       ; 1.000        ; 0.024      ; 10.469     ;
+; -9.397  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; -0.003     ; 10.430     ;
+; -9.395  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; 0.007      ; 10.438     ;
+; -9.388  ; flipflop:PIPE2|Temp[19]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.443     ;
+; -9.387  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[40] ; clock        ; clock       ; 1.000        ; 0.011      ; 10.434     ;
+; -9.382  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[63] ; clock        ; clock       ; 1.000        ; 0.017      ; 10.435     ;
+; -9.381  ; flipflop:PIPE2|Temp[51]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.012      ; 10.429     ;
+; -9.377  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[53] ; clock        ; clock       ; 1.000        ; 0.026      ; 10.439     ;
+; -9.373  ; flipflop:PIPE2|Temp[49]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; -0.011     ; 10.398     ;
+; -9.366  ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.024      ; 10.426     ;
+; -9.366  ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[67] ; clock        ; clock       ; 1.000        ; 0.011      ; 10.413     ;
+; -9.357  ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.013      ; 10.406     ;
+; -9.348  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[60] ; clock        ; clock       ; 1.000        ; 0.013      ; 10.397     ;
+; -9.347  ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[65] ; clock        ; clock       ; 1.000        ; 0.021      ; 10.404     ;
+; -9.347  ; flipflop:PIPE2|Temp[11]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.016      ; 10.399     ;
+; -9.341  ; flipflop:PIPE2|Temp[19]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.012      ; 10.389     ;
+; -9.340  ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.014      ; 10.390     ;
+; -9.337  ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[67] ; clock        ; clock       ; 1.000        ; 0.012      ; 10.385     ;
+; -9.327  ; flipflop:PIPE2|Temp[46]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.016      ; 10.379     ;
+; -9.313  ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.368     ;
+; -9.311  ; flipflop:PIPE2|Temp[47]  ; flipflop:PIPE3|Temp[67] ; clock        ; clock       ; 1.000        ; 0.012      ; 10.359     ;
+; -9.310  ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[64] ; clock        ; clock       ; 1.000        ; 0.017      ; 10.363     ;
+; -9.305  ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.020      ; 10.361     ;
+; -9.304  ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.008      ; 10.348     ;
+; -9.302  ; flipflop:PIPE2|Temp[11]  ; flipflop:PIPE3|Temp[67] ; clock        ; clock       ; 1.000        ; 0.012      ; 10.350     ;
+; -9.301  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[66] ; clock        ; clock       ; 1.000        ; 0.019      ; 10.356     ;
+; -9.300  ; flipflop:PIPE2|Temp[11]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.009      ; 10.345     ;
+; -9.296  ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.009      ; 10.341     ;
+; -9.291  ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[62] ; clock        ; clock       ; 1.000        ; 0.024      ; 10.351     ;
+; -9.287  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[47] ; clock        ; clock       ; 1.000        ; 0.013      ; 10.336     ;
+; -9.287  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[51] ; clock        ; clock       ; 1.000        ; 0.013      ; 10.336     ;
+; -9.287  ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.009      ; 10.332     ;
+; -9.285  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[47] ; clock        ; clock       ; 1.000        ; 0.023      ; 10.344     ;
+; -9.285  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[51] ; clock        ; clock       ; 1.000        ; 0.023      ; 10.344     ;
+; -9.285  ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.025      ; 10.346     ;
+; -9.284  ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[46] ; clock        ; clock       ; 1.000        ; 0.014      ; 10.334     ;
+; -9.282  ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[46] ; clock        ; clock       ; 1.000        ; 0.024      ; 10.342     ;
+; -9.281  ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[64] ; clock        ; clock       ; 1.000        ; 0.018      ; 10.335     ;
+; -9.280  ; flipflop:PIPE2|Temp[46]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.009      ; 10.325     ;
++---------+--------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                                                                                                                                                  ;
++-------+--------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                                                                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.522 ; flipflop:PIPE2|Temp[5]               ; flipflop:PIPE3|Temp[0]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.788      ;
+; 0.532 ; flipflop:PIPE2|Temp[24]              ; flipflop:PIPE3|Temp[3]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.798      ;
+; 0.641 ; flipflop:PIPE3|Temp[26]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_datain_reg1  ; clock        ; clock       ; 0.000        ; 0.063      ; 0.938      ;
+; 0.657 ; flipflop:PIPE3|Temp[103]             ; flipflop:PIPE4|Temp[70]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.923      ;
+; 0.658 ; flipflop:PIPE3|Temp[4]               ; flipflop:PIPE4|Temp[4]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.924      ;
+; 0.663 ; flipflop:PIPE3|Temp[65]              ; flipflop:PIPE4|Temp[33]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.929      ;
+; 0.666 ; flipflop:PIPE3|Temp[64]              ; flipflop:PIPE4|Temp[32]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.932      ;
+; 0.667 ; flipflop:PIPE3|Temp[68]              ; flipflop:PIPE4|Temp[36]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.933      ;
+; 0.674 ; flipflop:PIPE2|Temp[58]              ; flipflop:PIPE3|Temp[21]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.940      ;
+; 0.675 ; flipflop:PIPE3|Temp[43]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg4 ; clock        ; clock       ; 0.000        ; 0.061      ; 0.970      ;
+; 0.677 ; flipflop:PIPE2|Temp[48]              ; flipflop:PIPE3|Temp[11]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.943      ;
+; 0.683 ; flipflop:PIPE2|Temp[53]              ; flipflop:PIPE3|Temp[16]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.949      ;
+; 0.685 ; flipflop:PIPE2|Temp[51]              ; flipflop:PIPE3|Temp[14]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.951      ;
+; 0.726 ; flipflop:PIPE2|Temp[139]             ; flipflop:PIPE3|Temp[103]                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.992      ;
+; 0.729 ; flipflop:PIPE2|Temp[142]             ; flipflop:PIPE3|Temp[106]                                                                                             ; clock        ; clock       ; 0.000        ; 0.002      ; 0.997      ;
+; 0.803 ; flipflop:PIPE2|Temp[21]              ; flipflop:PIPE3|Temp[0]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 1.069      ;
+; 0.807 ; flipflop:PIPE2|Temp[8]               ; flipflop:PIPE3|Temp[3]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 1.073      ;
+; 0.833 ; flipflop:PIPE2|Temp[69]              ; flipflop:PIPE3|Temp[32]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 1.099      ;
+; 0.838 ; flipflop:PIPE2|Temp[7]               ; flipflop:PIPE3|Temp[2]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.841 ; flipflop:PIPE3|Temp[102]             ; flipflop:PIPE4|Temp[69]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 1.107      ;
+; 0.842 ; flipflop:PIPE3|Temp[66]              ; flipflop:PIPE4|Temp[34]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 1.108      ;
+; 0.844 ; flipflop:PIPE3|Temp[51]              ; flipflop:PIPE4|Temp[19]                                                                                              ; clock        ; clock       ; 0.000        ; -0.001     ; 1.109      ;
+; 0.845 ; flipflop:PIPE2|Temp[138]             ; flipflop:PIPE3|Temp[102]                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.111      ;
+; 0.856 ; flipflop:PIPE2|Temp[57]              ; flipflop:PIPE3|Temp[20]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 1.122      ;
+; 0.895 ; flipflop:PIPE3|Temp[25]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_datain_reg0  ; clock        ; clock       ; 0.000        ; 0.059      ; 1.188      ;
+; 0.900 ; flipflop:PIPE3|Temp[27]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_datain_reg2  ; clock        ; clock       ; 0.000        ; 0.063      ; 1.197      ;
+; 0.906 ; flipflop:PIPE3|Temp[34]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a28~porta_datain_reg1  ; clock        ; clock       ; 0.000        ; 0.068      ; 1.208      ;
+; 0.909 ; flipflop:PIPE3|Temp[13]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a8~porta_datain_reg0   ; clock        ; clock       ; 0.000        ; 0.072      ; 1.215      ;
+; 0.937 ; flipflop:PIPE3|Temp[30]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_datain_reg1  ; clock        ; clock       ; 0.000        ; 0.068      ; 1.239      ;
+; 0.938 ; flipflop:PIPE3|Temp[43]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg4 ; clock        ; clock       ; 0.000        ; 0.064      ; 1.236      ;
+; 0.942 ; flipflop:PIPE4|Temp[5]               ; RegBank:REGISSTRADORES|RegN:\Bank:2:RegBankx|saida[0]                                                                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.208      ;
+; 0.950 ; flipflop:PIPE2|Temp[56]              ; flipflop:PIPE3|Temp[19]                                                                                              ; clock        ; clock       ; 0.000        ; -0.009     ; 1.207      ;
+; 0.955 ; flipflop:PIPE2|Temp[52]              ; flipflop:PIPE3|Temp[15]                                                                                              ; clock        ; clock       ; 0.000        ; -0.001     ; 1.220      ;
+; 0.968 ; flipflop:PIPE3|Temp[40]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg1 ; clock        ; clock       ; 0.000        ; 0.082      ; 1.284      ;
+; 0.978 ; flipflop:PIPE3|Temp[40]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg1 ; clock        ; clock       ; 0.000        ; 0.085      ; 1.297      ;
+; 0.980 ; flipflop:PIPE3|Temp[42]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg3 ; clock        ; clock       ; 0.000        ; 0.064      ; 1.278      ;
+; 0.991 ; flipflop:PIPE3|Temp[42]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg3 ; clock        ; clock       ; 0.000        ; 0.067      ; 1.292      ;
+; 0.998 ; flipflop:PIPE2|Temp[44]              ; flipflop:PIPE3|Temp[7]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 1.264      ;
+; 0.999 ; flipflop:PIPE4|Temp[17]              ; RegBank:REGISSTRADORES|RegN:\Bank:2:RegBankx|saida[12]                                                               ; clock        ; clock       ; 0.000        ; -0.002     ; 1.263      ;
+; 0.999 ; flipflop:PIPE4|Temp[17]              ; RegBank:REGISSTRADORES|RegN:\Bank:3:RegBankx|saida[12]                                                               ; clock        ; clock       ; 0.000        ; -0.002     ; 1.263      ;
+; 1.080 ; flipflop:PIPE3|Temp[59]              ; flipflop:PIPE4|Temp[27]                                                                                              ; clock        ; clock       ; 0.000        ; 0.001      ; 1.347      ;
+; 1.095 ; flipflop:PIPE3|Temp[1]               ; flipflop:PIPE4|Temp[1]                                                                                               ; clock        ; clock       ; 0.000        ; 0.006      ; 1.367      ;
+; 1.095 ; flipflop:PIPE3|Temp[58]              ; flipflop:PIPE4|Temp[26]                                                                                              ; clock        ; clock       ; 0.000        ; -0.007     ; 1.354      ;
+; 1.096 ; flipflop:PIPE3|Temp[57]              ; flipflop:PIPE4|Temp[25]                                                                                              ; clock        ; clock       ; 0.000        ; -0.007     ; 1.355      ;
+; 1.102 ; flipflop:PIPE3|Temp[55]              ; flipflop:PIPE4|Temp[23]                                                                                              ; clock        ; clock       ; 0.000        ; -0.007     ; 1.361      ;
+; 1.119 ; flipflop:PIPE2|Temp[54]              ; flipflop:PIPE3|Temp[17]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 1.385      ;
+; 1.148 ; flipflop:PIPE3|Temp[23]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a16~porta_datain_reg2  ; clock        ; clock       ; 0.000        ; 0.062      ; 1.444      ;
+; 1.155 ; flipflop:PIPE3|Temp[31]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_datain_reg2  ; clock        ; clock       ; 0.000        ; 0.070      ; 1.459      ;
+; 1.162 ; flipflop:PIPE4|Temp[28]              ; RegBank:REGISSTRADORES|RegN:\Bank:0:RegBankx|saida[23]                                                               ; clock        ; clock       ; 0.000        ; -0.002     ; 1.426      ;
+; 1.163 ; flipflop:PIPE3|Temp[106]             ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a4~porta_we_reg        ; clock        ; clock       ; 0.000        ; 0.073      ; 1.470      ;
+; 1.164 ; flipflop:PIPE4|Temp[28]              ; RegBank:REGISSTRADORES|RegN:\Bank:1:RegBankx|saida[23]                                                               ; clock        ; clock       ; 0.000        ; -0.002     ; 1.428      ;
+; 1.170 ; flipflop:PIPE3|Temp[32]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_datain_reg3  ; clock        ; clock       ; 0.000        ; 0.070      ; 1.474      ;
+; 1.176 ; flipflop:PIPE3|Temp[28]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_datain_reg3  ; clock        ; clock       ; 0.000        ; 0.086      ; 1.496      ;
+; 1.184 ; flipflop:PIPE2|Temp[49]              ; flipflop:PIPE3|Temp[12]                                                                                              ; clock        ; clock       ; 0.000        ; -0.021     ; 1.429      ;
+; 1.186 ; flipflop:PIPE3|Temp[19]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a12~porta_datain_reg2  ; clock        ; clock       ; 0.000        ; 0.076      ; 1.496      ;
+; 1.223 ; flipflop:PIPE3|Temp[39]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg0 ; clock        ; clock       ; 0.000        ; 0.082      ; 1.539      ;
+; 1.225 ; flipflop:PIPE3|Temp[47]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg8 ; clock        ; clock       ; 0.000        ; 0.070      ; 1.529      ;
+; 1.228 ; flipflop:PIPE3|Temp[11]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a4~porta_datain_reg2   ; clock        ; clock       ; 0.000        ; 0.091      ; 1.553      ;
+; 1.232 ; flipflop:PIPE3|Temp[7]               ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg2   ; clock        ; clock       ; 0.000        ; 0.084      ; 1.550      ;
+; 1.235 ; flipflop:PIPE3|Temp[41]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg2 ; clock        ; clock       ; 0.000        ; 0.067      ; 1.536      ;
+; 1.235 ; flipflop:PIPE2|Temp[23]              ; flipflop:PIPE3|Temp[2]                                                                                               ; clock        ; clock       ; 0.000        ; -0.001     ; 1.500      ;
+; 1.237 ; flipflop:PIPE3|Temp[47]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg8 ; clock        ; clock       ; 0.000        ; 0.073      ; 1.544      ;
+; 1.237 ; flipflop:PIPE3|Temp[39]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg0 ; clock        ; clock       ; 0.000        ; 0.085      ; 1.556      ;
+; 1.251 ; flipflop:PIPE4|Temp[18]              ; RegBank:REGISSTRADORES|RegN:\Bank:21:RegBankx|saida[13]                                                              ; clock        ; clock       ; 0.000        ; 0.013      ; 1.530      ;
+; 1.252 ; flipflop:PIPE4|Temp[18]              ; RegBank:REGISSTRADORES|RegN:\Bank:29:RegBankx|saida[13]                                                              ; clock        ; clock       ; 0.000        ; 0.013      ; 1.531      ;
+; 1.257 ; flipflop:PIPE2|Temp[72]              ; flipflop:PIPE3|Temp[35]                                                                                              ; clock        ; clock       ; 0.000        ; 0.007      ; 1.530      ;
+; 1.265 ; flipflop:PIPE4|Temp[14]              ; RegBank:REGISSTRADORES|RegN:\Bank:21:RegBankx|saida[9]                                                               ; clock        ; clock       ; 0.000        ; 0.013      ; 1.544      ;
+; 1.267 ; flipflop:PIPE4|Temp[14]              ; RegBank:REGISSTRADORES|RegN:\Bank:29:RegBankx|saida[9]                                                               ; clock        ; clock       ; 0.000        ; 0.013      ; 1.546      ;
+; 1.270 ; flipflop:PIPE4|Temp[25]              ; RegBank:REGISSTRADORES|RegN:\Bank:2:RegBankx|saida[20]                                                               ; clock        ; clock       ; 0.000        ; 0.003      ; 1.539      ;
+; 1.271 ; flipflop:PIPE4|Temp[25]              ; RegBank:REGISSTRADORES|RegN:\Bank:0:RegBankx|saida[20]                                                               ; clock        ; clock       ; 0.000        ; 0.003      ; 1.540      ;
+; 1.306 ; flipflop:PIPE4|Temp[70]              ; RegBank:REGISSTRADORES|RegN:\Bank:25:RegBankx|saida[29]                                                              ; clock        ; clock       ; 0.000        ; -0.004     ; 1.568      ;
+; 1.307 ; flipflop:PIPE4|Temp[70]              ; RegBank:REGISSTRADORES|RegN:\Bank:17:RegBankx|saida[29]                                                              ; clock        ; clock       ; 0.000        ; -0.004     ; 1.569      ;
+; 1.329 ; flipflop:PIPE4|Temp[70]              ; RegBank:REGISSTRADORES|RegN:\Bank:21:RegBankx|saida[29]                                                              ; clock        ; clock       ; 0.000        ; -0.016     ; 1.579      ;
+; 1.339 ; flipflop:PIPE4|Temp[17]              ; RegBank:REGISSTRADORES|RegN:\Bank:1:RegBankx|saida[12]                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 1.605      ;
+; 1.340 ; flipflop:PIPE4|Temp[17]              ; RegBank:REGISSTRADORES|RegN:\Bank:0:RegBankx|saida[12]                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 1.606      ;
+; 1.348 ; flipflop:PIPE3|Temp[3]               ; flipflop:PIPE4|Temp[3]                                                                                               ; clock        ; clock       ; 0.000        ; -0.011     ; 1.603      ;
+; 1.353 ; flipflop:PIPE2|Temp[91]~_Duplicate_2 ; flipflop:PIPE3|Temp[54]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 1.619      ;
+; 1.354 ; flipflop:PIPE3|Temp[40]              ; flipflop:PIPE4|Temp[8]                                                                                               ; clock        ; clock       ; 0.000        ; -0.012     ; 1.608      ;
+; 1.360 ; flipflop:PIPE3|Temp[2]               ; flipflop:PIPE4|Temp[2]                                                                                               ; clock        ; clock       ; 0.000        ; 0.004      ; 1.630      ;
+; 1.366 ; flipflop:PIPE2|Temp[70]              ; flipflop:PIPE3|Temp[33]                                                                                              ; clock        ; clock       ; 0.000        ; 0.002      ; 1.634      ;
+; 1.369 ; flipflop:PIPE2|Temp[6]               ; flipflop:PIPE3|Temp[1]                                                                                               ; clock        ; clock       ; 0.000        ; -0.002     ; 1.633      ;
+; 1.377 ; flipflop:PIPE4|Temp[33]              ; RegBank:REGISSTRADORES|RegN:\Bank:24:RegBankx|saida[28]                                                              ; clock        ; clock       ; 0.000        ; 0.001      ; 1.644      ;
+; 1.378 ; flipflop:PIPE3|Temp[56]              ; flipflop:PIPE4|Temp[24]                                                                                              ; clock        ; clock       ; 0.000        ; -0.001     ; 1.643      ;
+; 1.379 ; flipflop:PIPE4|Temp[33]              ; RegBank:REGISSTRADORES|RegN:\Bank:16:RegBankx|saida[28]                                                              ; clock        ; clock       ; 0.000        ; 0.001      ; 1.646      ;
+; 1.387 ; flipflop:PIPE2|Temp[65]              ; flipflop:PIPE3|Temp[28]                                                                                              ; clock        ; clock       ; 0.000        ; 0.002      ; 1.655      ;
+; 1.389 ; flipflop:PIPE3|Temp[0]               ; flipflop:PIPE4|Temp[0]                                                                                               ; clock        ; clock       ; 0.000        ; 0.009      ; 1.664      ;
+; 1.392 ; flipflop:PIPE3|Temp[62]              ; flipflop:PIPE4|Temp[30]                                                                                              ; clock        ; clock       ; 0.000        ; -0.007     ; 1.651      ;
+; 1.396 ; flipflop:PIPE3|Temp[22]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a16~porta_datain_reg1  ; clock        ; clock       ; 0.000        ; 0.077      ; 1.707      ;
+; 1.397 ; flipflop:PIPE4|Temp[28]              ; RegBank:REGISSTRADORES|RegN:\Bank:2:RegBankx|saida[23]                                                               ; clock        ; clock       ; 0.000        ; 0.013      ; 1.676      ;
+; 1.402 ; flipflop:PIPE2|Temp[50]              ; flipflop:PIPE3|Temp[13]                                                                                              ; clock        ; clock       ; 0.000        ; -0.008     ; 1.660      ;
+; 1.404 ; flipflop:PIPE2|Temp[60]              ; flipflop:PIPE3|Temp[23]                                                                                              ; clock        ; clock       ; 0.000        ; 0.013      ; 1.683      ;
+; 1.406 ; flipflop:PIPE3|Temp[46]              ; flipflop:PIPE4|Temp[14]                                                                                              ; clock        ; clock       ; 0.000        ; -0.012     ; 1.660      ;
+; 1.415 ; flipflop:PIPE3|Temp[49]              ; flipflop:PIPE4|Temp[17]                                                                                              ; clock        ; clock       ; 0.000        ; -0.012     ; 1.669      ;
+; 1.418 ; flipflop:PIPE3|Temp[39]              ; flipflop:PIPE4|Temp[7]                                                                                               ; clock        ; clock       ; 0.000        ; 0.023      ; 1.707      ;
+; 1.423 ; flipflop:PIPE4|Temp[31]              ; RegBank:REGISSTRADORES|RegN:\Bank:0:RegBankx|saida[26]                                                               ; clock        ; clock       ; 0.000        ; -0.005     ; 1.684      ;
+; 1.423 ; flipflop:PIPE4|Temp[31]              ; RegBank:REGISSTRADORES|RegN:\Bank:2:RegBankx|saida[26]                                                               ; clock        ; clock       ; 0.000        ; -0.005     ; 1.684      ;
+; 1.424 ; flipflop:PIPE4|Temp[16]              ; RegBank:REGISSTRADORES|RegN:\Bank:21:RegBankx|saida[11]                                                              ; clock        ; clock       ; 0.000        ; 0.013      ; 1.703      ;
+; 1.424 ; flipflop:PIPE4|Temp[16]              ; RegBank:REGISSTRADORES|RegN:\Bank:29:RegBankx|saida[11]                                                              ; clock        ; clock       ; 0.000        ; 0.013      ; 1.703      ;
+; 1.425 ; flipflop:PIPE3|Temp[36]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a28~porta_datain_reg3  ; clock        ; clock       ; 0.000        ; 0.079      ; 1.738      ;
+; 1.425 ; flipflop:PIPE3|Temp[60]              ; flipflop:PIPE4|Temp[28]                                                                                              ; clock        ; clock       ; 0.000        ; -0.024     ; 1.667      ;
++-------+--------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                                                                                                              ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                              ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------------------------------------------------------------------+
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[37]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[37]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[38]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[38]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[39]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[39]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[40]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[40]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[41]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[41]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[42]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[42]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[43]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[43]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[44]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[44]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[45]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[45]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[46]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[46]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[47]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[47]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[48]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[48]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[49]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[49]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[50]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[50]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[51]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[51]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[52]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[52]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[53]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[53]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[54]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[54]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[55]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[55]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[56]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[56]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[57]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[57]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[58]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[58]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[59]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[59]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[60]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[60]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[61]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[61]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[62]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[62]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[63]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[63]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[64]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[64]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[65]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[65]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[66]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[66]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[67]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[67]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[68]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[68]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg5 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg5 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg6 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg6 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg7 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg7 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg8 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg8 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg9 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg9 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a10~porta_memory_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a10~porta_memory_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a11~porta_memory_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a11~porta_memory_reg0 ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; OPERACAOFORCADA[*]   ; clock      ; 12.769 ; 12.769 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[0]  ; clock      ; 3.988  ; 3.988  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[1]  ; clock      ; 4.114  ; 4.114  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[2]  ; clock      ; 4.227  ; 4.227  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[3]  ; clock      ; 4.039  ; 4.039  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[4]  ; clock      ; 4.102  ; 4.102  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[5]  ; clock      ; 3.962  ; 3.962  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[6]  ; clock      ; 3.880  ; 3.880  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[7]  ; clock      ; 3.910  ; 3.910  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[8]  ; clock      ; 3.830  ; 3.830  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[9]  ; clock      ; 3.834  ; 3.834  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[10] ; clock      ; 4.004  ; 4.004  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[11] ; clock      ; 4.004  ; 4.004  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[12] ; clock      ; 3.756  ; 3.756  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[13] ; clock      ; 3.907  ; 3.907  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[14] ; clock      ; 3.651  ; 3.651  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[15] ; clock      ; 3.498  ; 3.498  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[16] ; clock      ; 11.306 ; 11.306 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[17] ; clock      ; 10.361 ; 10.361 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[18] ; clock      ; 11.339 ; 11.339 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[19] ; clock      ; 11.303 ; 11.303 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[20] ; clock      ; 6.486  ; 6.486  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[21] ; clock      ; 12.376 ; 12.376 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[22] ; clock      ; 12.769 ; 12.769 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[23] ; clock      ; 11.078 ; 11.078 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[24] ; clock      ; 11.919 ; 11.919 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[25] ; clock      ; 7.092  ; 7.092  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[26] ; clock      ; 6.310  ; 6.310  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[27] ; clock      ; 6.107  ; 6.107  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[28] ; clock      ; 6.078  ; 6.078  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[29] ; clock      ; 6.385  ; 6.385  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[30] ; clock      ; 6.443  ; 6.443  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[31] ; clock      ; 6.235  ; 6.235  ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; OPERACAOFORCADA[*]   ; clock      ; -3.268 ; -3.268 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[0]  ; clock      ; -3.758 ; -3.758 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[1]  ; clock      ; -3.884 ; -3.884 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[2]  ; clock      ; -3.997 ; -3.997 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[3]  ; clock      ; -3.809 ; -3.809 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[4]  ; clock      ; -3.872 ; -3.872 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[5]  ; clock      ; -3.732 ; -3.732 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[6]  ; clock      ; -3.650 ; -3.650 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[7]  ; clock      ; -3.680 ; -3.680 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[8]  ; clock      ; -3.600 ; -3.600 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[9]  ; clock      ; -3.604 ; -3.604 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[10] ; clock      ; -3.774 ; -3.774 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[11] ; clock      ; -3.774 ; -3.774 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[12] ; clock      ; -3.526 ; -3.526 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[13] ; clock      ; -3.677 ; -3.677 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[14] ; clock      ; -3.421 ; -3.421 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[15] ; clock      ; -3.268 ; -3.268 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[16] ; clock      ; -4.163 ; -4.163 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[17] ; clock      ; -4.481 ; -4.481 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[18] ; clock      ; -4.291 ; -4.291 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[19] ; clock      ; -4.038 ; -4.038 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[20] ; clock      ; -3.725 ; -3.725 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[21] ; clock      ; -5.914 ; -5.914 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[22] ; clock      ; -5.745 ; -5.745 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[23] ; clock      ; -6.267 ; -6.267 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[24] ; clock      ; -5.642 ; -5.642 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[25] ; clock      ; -4.286 ; -4.286 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[26] ; clock      ; -4.136 ; -4.136 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[27] ; clock      ; -4.006 ; -4.006 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[28] ; clock      ; -3.445 ; -3.445 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[29] ; clock      ; -3.299 ; -3.299 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[30] ; clock      ; -3.520 ; -3.520 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[31] ; clock      ; -4.061 ; -4.061 ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; saida[*]   ; clock      ; 9.965 ; 9.965 ; Rise       ; clock           ;
+;  saida[0]  ; clock      ; 8.711 ; 8.711 ; Rise       ; clock           ;
+;  saida[1]  ; clock      ; 8.827 ; 8.827 ; Rise       ; clock           ;
+;  saida[2]  ; clock      ; 9.669 ; 9.669 ; Rise       ; clock           ;
+;  saida[3]  ; clock      ; 8.754 ; 8.754 ; Rise       ; clock           ;
+;  saida[4]  ; clock      ; 9.372 ; 9.372 ; Rise       ; clock           ;
+;  saida[5]  ; clock      ; 8.818 ; 8.818 ; Rise       ; clock           ;
+;  saida[6]  ; clock      ; 9.965 ; 9.965 ; Rise       ; clock           ;
+;  saida[7]  ; clock      ; 9.235 ; 9.235 ; Rise       ; clock           ;
+;  saida[8]  ; clock      ; 8.376 ; 8.376 ; Rise       ; clock           ;
+;  saida[9]  ; clock      ; 8.675 ; 8.675 ; Rise       ; clock           ;
+;  saida[10] ; clock      ; 8.288 ; 8.288 ; Rise       ; clock           ;
+;  saida[11] ; clock      ; 8.819 ; 8.819 ; Rise       ; clock           ;
+;  saida[12] ; clock      ; 8.948 ; 8.948 ; Rise       ; clock           ;
+;  saida[13] ; clock      ; 8.560 ; 8.560 ; Rise       ; clock           ;
+;  saida[14] ; clock      ; 8.204 ; 8.204 ; Rise       ; clock           ;
+;  saida[15] ; clock      ; 9.423 ; 9.423 ; Rise       ; clock           ;
+;  saida[16] ; clock      ; 8.820 ; 8.820 ; Rise       ; clock           ;
+;  saida[17] ; clock      ; 9.269 ; 9.269 ; Rise       ; clock           ;
+;  saida[18] ; clock      ; 8.622 ; 8.622 ; Rise       ; clock           ;
+;  saida[19] ; clock      ; 8.470 ; 8.470 ; Rise       ; clock           ;
+;  saida[20] ; clock      ; 9.402 ; 9.402 ; Rise       ; clock           ;
+;  saida[21] ; clock      ; 8.662 ; 8.662 ; Rise       ; clock           ;
+;  saida[22] ; clock      ; 8.354 ; 8.354 ; Rise       ; clock           ;
+;  saida[23] ; clock      ; 7.898 ; 7.898 ; Rise       ; clock           ;
+;  saida[24] ; clock      ; 8.920 ; 8.920 ; Rise       ; clock           ;
+;  saida[25] ; clock      ; 8.881 ; 8.881 ; Rise       ; clock           ;
+;  saida[26] ; clock      ; 8.377 ; 8.377 ; Rise       ; clock           ;
+;  saida[27] ; clock      ; 9.139 ; 9.139 ; Rise       ; clock           ;
+;  saida[28] ; clock      ; 9.149 ; 9.149 ; Rise       ; clock           ;
+;  saida[29] ; clock      ; 7.935 ; 7.935 ; Rise       ; clock           ;
+;  saida[30] ; clock      ; 8.259 ; 8.259 ; Rise       ; clock           ;
+;  saida[31] ; clock      ; 8.261 ; 8.261 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; saida[*]   ; clock      ; 6.701 ; 6.701 ; Rise       ; clock           ;
+;  saida[0]  ; clock      ; 7.366 ; 7.366 ; Rise       ; clock           ;
+;  saida[1]  ; clock      ; 7.524 ; 7.524 ; Rise       ; clock           ;
+;  saida[2]  ; clock      ; 9.144 ; 9.144 ; Rise       ; clock           ;
+;  saida[3]  ; clock      ; 7.555 ; 7.555 ; Rise       ; clock           ;
+;  saida[4]  ; clock      ; 7.742 ; 7.742 ; Rise       ; clock           ;
+;  saida[5]  ; clock      ; 7.510 ; 7.510 ; Rise       ; clock           ;
+;  saida[6]  ; clock      ; 8.248 ; 8.248 ; Rise       ; clock           ;
+;  saida[7]  ; clock      ; 7.517 ; 7.517 ; Rise       ; clock           ;
+;  saida[8]  ; clock      ; 8.058 ; 8.058 ; Rise       ; clock           ;
+;  saida[9]  ; clock      ; 7.218 ; 7.218 ; Rise       ; clock           ;
+;  saida[10] ; clock      ; 7.125 ; 7.125 ; Rise       ; clock           ;
+;  saida[11] ; clock      ; 7.369 ; 7.369 ; Rise       ; clock           ;
+;  saida[12] ; clock      ; 7.636 ; 7.636 ; Rise       ; clock           ;
+;  saida[13] ; clock      ; 7.098 ; 7.098 ; Rise       ; clock           ;
+;  saida[14] ; clock      ; 8.056 ; 8.056 ; Rise       ; clock           ;
+;  saida[15] ; clock      ; 7.484 ; 7.484 ; Rise       ; clock           ;
+;  saida[16] ; clock      ; 7.419 ; 7.419 ; Rise       ; clock           ;
+;  saida[17] ; clock      ; 8.104 ; 8.104 ; Rise       ; clock           ;
+;  saida[18] ; clock      ; 7.234 ; 7.234 ; Rise       ; clock           ;
+;  saida[19] ; clock      ; 7.028 ; 7.028 ; Rise       ; clock           ;
+;  saida[20] ; clock      ; 8.106 ; 8.106 ; Rise       ; clock           ;
+;  saida[21] ; clock      ; 7.575 ; 7.575 ; Rise       ; clock           ;
+;  saida[22] ; clock      ; 6.932 ; 6.932 ; Rise       ; clock           ;
+;  saida[23] ; clock      ; 6.701 ; 6.701 ; Rise       ; clock           ;
+;  saida[24] ; clock      ; 7.614 ; 7.614 ; Rise       ; clock           ;
+;  saida[25] ; clock      ; 7.434 ; 7.434 ; Rise       ; clock           ;
+;  saida[26] ; clock      ; 7.296 ; 7.296 ; Rise       ; clock           ;
+;  saida[27] ; clock      ; 8.578 ; 8.578 ; Rise       ; clock           ;
+;  saida[28] ; clock      ; 7.519 ; 7.519 ; Rise       ; clock           ;
+;  saida[29] ; clock      ; 7.051 ; 7.051 ; Rise       ; clock           ;
+;  saida[30] ; clock      ; 7.118 ; 7.118 ; Rise       ; clock           ;
+;  saida[31] ; clock      ; 7.933 ; 7.933 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -4.241 ; -1627.834     ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.241 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -2.000 ; -2116.280             ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                                         ;
++--------+--------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -4.241 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.018      ; 5.291      ;
+; -4.224 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.008      ; 5.264      ;
+; -4.145 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.013      ; 5.190      ;
+; -4.115 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.010      ; 5.157      ;
+; -4.110 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.011      ; 5.153      ;
+; -4.099 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.017      ; 5.148      ;
+; -4.087 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; -0.002     ; 5.117      ;
+; -4.035 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[47] ; clock        ; clock       ; 1.000        ; 0.013      ; 5.080      ;
+; -4.035 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[51] ; clock        ; clock       ; 1.000        ; 0.013      ; 5.080      ;
+; -4.027 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[46] ; clock        ; clock       ; 1.000        ; 0.015      ; 5.074      ;
+; -4.027 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.026      ; 5.085      ;
+; -4.010 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.016      ; 5.058      ;
+; -3.986 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.018      ; 5.036      ;
+; -3.969 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.008      ; 5.009      ;
+; -3.962 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.026      ; 5.020      ;
+; -3.945 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.016      ; 4.993      ;
+; -3.931 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.021      ; 4.984      ;
+; -3.916 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[40] ; clock        ; clock       ; 1.000        ; 0.002      ; 4.950      ;
+; -3.910 ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.018      ; 4.960      ;
+; -3.901 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.018      ; 4.951      ;
+; -3.898 ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.017      ; 4.947      ;
+; -3.898 ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.026      ; 4.956      ;
+; -3.896 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.019      ; 4.947      ;
+; -3.893 ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.008      ; 4.933      ;
+; -3.891 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[62] ; clock        ; clock       ; 1.000        ; 0.015      ; 4.938      ;
+; -3.890 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.013      ; 4.935      ;
+; -3.885 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.025      ; 4.942      ;
+; -3.881 ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.007      ; 4.920      ;
+; -3.881 ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.016      ; 4.929      ;
+; -3.873 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; 0.006      ; 4.911      ;
+; -3.867 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[50] ; clock        ; clock       ; 1.000        ; 0.015      ; 4.914      ;
+; -3.867 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[45] ; clock        ; clock       ; 1.000        ; 0.015      ; 4.914      ;
+; -3.866 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.021      ; 4.919      ;
+; -3.863 ; flipflop:PIPE2|Temp[14]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.018      ; 4.913      ;
+; -3.861 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[60] ; clock        ; clock       ; 1.000        ; 0.014      ; 4.907      ;
+; -3.860 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.010      ; 4.902      ;
+; -3.855 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.011      ; 4.898      ;
+; -3.846 ; flipflop:PIPE2|Temp[14]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.008      ; 4.886      ;
+; -3.844 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.017      ; 4.893      ;
+; -3.836 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.018      ; 4.886      ;
+; -3.835 ; flipflop:PIPE2|Temp[18]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.022      ; 4.889      ;
+; -3.832 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; -0.002     ; 4.862      ;
+; -3.831 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.019      ; 4.882      ;
+; -3.830 ; flipflop:PIPE2|Temp[48]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.026      ; 4.888      ;
+; -3.830 ; flipflop:PIPE2|Temp[49]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; -0.002     ; 4.860      ;
+; -3.822 ; flipflop:PIPE2|Temp[50]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.022      ; 4.876      ;
+; -3.821 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[47] ; clock        ; clock       ; 1.000        ; 0.021      ; 4.874      ;
+; -3.821 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[51] ; clock        ; clock       ; 1.000        ; 0.021      ; 4.874      ;
+; -3.820 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.025      ; 4.877      ;
+; -3.818 ; flipflop:PIPE2|Temp[18]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.012      ; 4.862      ;
+; -3.814 ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.013      ; 4.859      ;
+; -3.813 ; flipflop:PIPE2|Temp[48]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.016      ; 4.861      ;
+; -3.813 ; flipflop:PIPE2|Temp[12]  ; flipflop:PIPE3|Temp[46] ; clock        ; clock       ; 1.000        ; 0.023      ; 4.868      ;
+; -3.813 ; flipflop:PIPE2|Temp[49]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; -0.012     ; 4.833      ;
+; -3.808 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; 0.006      ; 4.846      ;
+; -3.805 ; flipflop:PIPE2|Temp[50]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.012      ; 4.849      ;
+; -3.802 ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.012      ; 4.846      ;
+; -3.802 ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.021      ; 4.855      ;
+; -3.798 ; flipflop:PIPE2|Temp[11]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.018      ; 4.848      ;
+; -3.794 ; flipflop:PIPE2|Temp[51]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.022      ; 4.848      ;
+; -3.784 ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.010      ; 4.826      ;
+; -3.781 ; flipflop:PIPE2|Temp[19]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.022      ; 4.835      ;
+; -3.781 ; flipflop:PIPE2|Temp[46]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; 0.018      ; 4.831      ;
+; -3.781 ; flipflop:PIPE2|Temp[11]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.008      ; 4.821      ;
+; -3.780 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[47] ; clock        ; clock       ; 1.000        ; 0.013      ; 4.825      ;
+; -3.780 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[51] ; clock        ; clock       ; 1.000        ; 0.013      ; 4.825      ;
+; -3.779 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[63] ; clock        ; clock       ; 1.000        ; 0.017      ; 4.828      ;
+; -3.779 ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.011      ; 4.822      ;
+; -3.778 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[48] ; clock        ; clock       ; 1.000        ; 0.015      ; 4.825      ;
+; -3.777 ; flipflop:PIPE2|Temp[51]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.012      ; 4.821      ;
+; -3.772 ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.009      ; 4.813      ;
+; -3.772 ; flipflop:PIPE2|Temp[42]  ; flipflop:PIPE3|Temp[46] ; clock        ; clock       ; 1.000        ; 0.015      ; 4.819      ;
+; -3.772 ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.018      ; 4.822      ;
+; -3.768 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[39] ; clock        ; clock       ; 1.000        ; 0.002      ; 4.802      ;
+; -3.768 ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.017      ; 4.817      ;
+; -3.767 ; flipflop:PIPE2|Temp[14]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.013      ; 4.812      ;
+; -3.767 ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.010      ; 4.809      ;
+; -3.767 ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.019      ; 4.818      ;
+; -3.764 ; flipflop:PIPE2|Temp[19]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.012      ; 4.808      ;
+; -3.764 ; flipflop:PIPE2|Temp[46]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; 0.008      ; 4.804      ;
+; -3.759 ; flipflop:PIPE2|Temp[17]  ; flipflop:PIPE3|Temp[58] ; clock        ; clock       ; 1.000        ; -0.002     ; 4.789      ;
+; -3.756 ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.016      ; 4.804      ;
+; -3.756 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[47] ; clock        ; clock       ; 1.000        ; 0.021      ; 4.809      ;
+; -3.756 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[51] ; clock        ; clock       ; 1.000        ; 0.021      ; 4.809      ;
+; -3.756 ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.025      ; 4.813      ;
+; -3.756 ; flipflop:PIPE2|Temp[10]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; -0.002     ; 4.786      ;
+; -3.748 ; flipflop:PIPE2|Temp[44]  ; flipflop:PIPE3|Temp[46] ; clock        ; clock       ; 1.000        ; 0.023      ; 4.803      ;
+; -3.744 ; flipflop:PIPE2|Temp[13]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; -0.003     ; 4.773      ;
+; -3.744 ; flipflop:PIPE2|Temp[16]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; 0.006      ; 4.782      ;
+; -3.742 ; flipflop:PIPE2|Temp[17]  ; flipflop:PIPE3|Temp[55] ; clock        ; clock       ; 1.000        ; -0.012     ; 4.762      ;
+; -3.739 ; flipflop:PIPE2|Temp[18]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.017      ; 4.788      ;
+; -3.737 ; flipflop:PIPE2|Temp[14]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.010      ; 4.779      ;
+; -3.734 ; flipflop:PIPE2|Temp[48]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.021      ; 4.787      ;
+; -3.734 ; flipflop:PIPE2|Temp[49]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; -0.007     ; 4.759      ;
+; -3.732 ; flipflop:PIPE2|Temp[14]  ; flipflop:PIPE3|Temp[56] ; clock        ; clock       ; 1.000        ; 0.011      ; 4.775      ;
+; -3.728 ; flipflop:PIPE2|Temp[143] ; flipflop:PIPE3|Temp[53] ; clock        ; clock       ; 1.000        ; 0.024      ; 4.784      ;
+; -3.726 ; flipflop:PIPE2|Temp[50]  ; flipflop:PIPE3|Temp[49] ; clock        ; clock       ; 1.000        ; 0.017      ; 4.775      ;
+; -3.721 ; flipflop:PIPE2|Temp[14]  ; flipflop:PIPE3|Temp[59] ; clock        ; clock       ; 1.000        ; 0.017      ; 4.770      ;
+; -3.709 ; flipflop:PIPE2|Temp[14]  ; flipflop:PIPE3|Temp[54] ; clock        ; clock       ; 1.000        ; -0.002     ; 4.739      ;
+; -3.709 ; flipflop:PIPE2|Temp[18]  ; flipflop:PIPE3|Temp[57] ; clock        ; clock       ; 1.000        ; 0.014      ; 4.755      ;
++--------+--------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                                                                                                                                                  ;
++-------+--------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                            ; To Node                                                                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.241 ; flipflop:PIPE2|Temp[5]               ; flipflop:PIPE3|Temp[0]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.393      ;
+; 0.246 ; flipflop:PIPE2|Temp[24]              ; flipflop:PIPE3|Temp[3]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.398      ;
+; 0.260 ; flipflop:PIPE3|Temp[26]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_datain_reg1  ; clock        ; clock       ; 0.000        ; 0.062      ; 0.460      ;
+; 0.290 ; flipflop:PIPE3|Temp[43]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg4 ; clock        ; clock       ; 0.000        ; 0.058      ; 0.486      ;
+; 0.323 ; flipflop:PIPE3|Temp[103]             ; flipflop:PIPE4|Temp[70]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.475      ;
+; 0.325 ; flipflop:PIPE3|Temp[4]               ; flipflop:PIPE4|Temp[4]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.477      ;
+; 0.328 ; flipflop:PIPE3|Temp[65]              ; flipflop:PIPE4|Temp[33]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.480      ;
+; 0.330 ; flipflop:PIPE3|Temp[64]              ; flipflop:PIPE4|Temp[32]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.482      ;
+; 0.330 ; flipflop:PIPE3|Temp[68]              ; flipflop:PIPE4|Temp[36]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.482      ;
+; 0.331 ; flipflop:PIPE2|Temp[58]              ; flipflop:PIPE3|Temp[21]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.483      ;
+; 0.335 ; flipflop:PIPE2|Temp[48]              ; flipflop:PIPE3|Temp[11]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.487      ;
+; 0.337 ; flipflop:PIPE2|Temp[139]             ; flipflop:PIPE3|Temp[103]                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.489      ;
+; 0.337 ; flipflop:PIPE2|Temp[142]             ; flipflop:PIPE3|Temp[106]                                                                                             ; clock        ; clock       ; 0.000        ; 0.002      ; 0.491      ;
+; 0.338 ; flipflop:PIPE2|Temp[53]              ; flipflop:PIPE3|Temp[16]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.490      ;
+; 0.343 ; flipflop:PIPE2|Temp[51]              ; flipflop:PIPE3|Temp[14]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.495      ;
+; 0.359 ; flipflop:PIPE2|Temp[21]              ; flipflop:PIPE3|Temp[0]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.511      ;
+; 0.366 ; flipflop:PIPE2|Temp[8]               ; flipflop:PIPE3|Temp[3]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.518      ;
+; 0.374 ; flipflop:PIPE2|Temp[7]               ; flipflop:PIPE3|Temp[2]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.526      ;
+; 0.381 ; flipflop:PIPE3|Temp[25]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_datain_reg0  ; clock        ; clock       ; 0.000        ; 0.058      ; 0.577      ;
+; 0.383 ; flipflop:PIPE3|Temp[27]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_datain_reg2  ; clock        ; clock       ; 0.000        ; 0.062      ; 0.583      ;
+; 0.392 ; flipflop:PIPE3|Temp[13]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a8~porta_datain_reg0   ; clock        ; clock       ; 0.000        ; 0.068      ; 0.598      ;
+; 0.392 ; flipflop:PIPE3|Temp[34]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a28~porta_datain_reg1  ; clock        ; clock       ; 0.000        ; 0.064      ; 0.594      ;
+; 0.406 ; flipflop:PIPE3|Temp[30]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_datain_reg1  ; clock        ; clock       ; 0.000        ; 0.064      ; 0.608      ;
+; 0.407 ; flipflop:PIPE3|Temp[102]             ; flipflop:PIPE4|Temp[69]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.559      ;
+; 0.407 ; flipflop:PIPE3|Temp[66]              ; flipflop:PIPE4|Temp[34]                                                                                              ; clock        ; clock       ; 0.000        ; -0.001     ; 0.558      ;
+; 0.409 ; flipflop:PIPE3|Temp[51]              ; flipflop:PIPE4|Temp[19]                                                                                              ; clock        ; clock       ; 0.000        ; -0.001     ; 0.560      ;
+; 0.410 ; flipflop:PIPE2|Temp[138]             ; flipflop:PIPE3|Temp[102]                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.562      ;
+; 0.410 ; flipflop:PIPE2|Temp[69]              ; flipflop:PIPE3|Temp[32]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.562      ;
+; 0.412 ; flipflop:PIPE3|Temp[43]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg4 ; clock        ; clock       ; 0.000        ; 0.062      ; 0.612      ;
+; 0.415 ; flipflop:PIPE3|Temp[40]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg1 ; clock        ; clock       ; 0.000        ; 0.078      ; 0.631      ;
+; 0.415 ; flipflop:PIPE2|Temp[57]              ; flipflop:PIPE3|Temp[20]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.567      ;
+; 0.424 ; flipflop:PIPE3|Temp[42]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg3 ; clock        ; clock       ; 0.000        ; 0.063      ; 0.625      ;
+; 0.424 ; flipflop:PIPE3|Temp[40]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg1 ; clock        ; clock       ; 0.000        ; 0.082      ; 0.644      ;
+; 0.432 ; flipflop:PIPE2|Temp[52]              ; flipflop:PIPE3|Temp[15]                                                                                              ; clock        ; clock       ; 0.000        ; -0.001     ; 0.583      ;
+; 0.433 ; flipflop:PIPE3|Temp[42]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg3 ; clock        ; clock       ; 0.000        ; 0.067      ; 0.638      ;
+; 0.446 ; flipflop:PIPE2|Temp[56]              ; flipflop:PIPE3|Temp[19]                                                                                              ; clock        ; clock       ; 0.000        ; -0.007     ; 0.591      ;
+; 0.457 ; flipflop:PIPE2|Temp[44]              ; flipflop:PIPE3|Temp[7]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.609      ;
+; 0.473 ; flipflop:PIPE4|Temp[5]               ; RegBank:REGISSTRADORES|RegN:\Bank:2:RegBankx|saida[0]                                                                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.625      ;
+; 0.479 ; flipflop:PIPE4|Temp[17]              ; RegBank:REGISSTRADORES|RegN:\Bank:2:RegBankx|saida[12]                                                               ; clock        ; clock       ; 0.000        ; -0.002     ; 0.629      ;
+; 0.479 ; flipflop:PIPE4|Temp[17]              ; RegBank:REGISSTRADORES|RegN:\Bank:3:RegBankx|saida[12]                                                               ; clock        ; clock       ; 0.000        ; -0.002     ; 0.629      ;
+; 0.488 ; flipflop:PIPE3|Temp[31]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_datain_reg2  ; clock        ; clock       ; 0.000        ; 0.067      ; 0.693      ;
+; 0.494 ; flipflop:PIPE3|Temp[23]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a16~porta_datain_reg2  ; clock        ; clock       ; 0.000        ; 0.059      ; 0.691      ;
+; 0.497 ; flipflop:PIPE3|Temp[32]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_datain_reg3  ; clock        ; clock       ; 0.000        ; 0.067      ; 0.702      ;
+; 0.506 ; flipflop:PIPE3|Temp[28]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_datain_reg3  ; clock        ; clock       ; 0.000        ; 0.083      ; 0.727      ;
+; 0.514 ; flipflop:PIPE3|Temp[59]              ; flipflop:PIPE4|Temp[27]                                                                                              ; clock        ; clock       ; 0.000        ; -0.001     ; 0.665      ;
+; 0.518 ; flipflop:PIPE3|Temp[19]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a12~porta_datain_reg2  ; clock        ; clock       ; 0.000        ; 0.070      ; 0.726      ;
+; 0.522 ; flipflop:PIPE3|Temp[1]               ; flipflop:PIPE4|Temp[1]                                                                                               ; clock        ; clock       ; 0.000        ; 0.007      ; 0.681      ;
+; 0.522 ; flipflop:PIPE3|Temp[106]             ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a4~porta_we_reg        ; clock        ; clock       ; 0.000        ; 0.068      ; 0.728      ;
+; 0.525 ; flipflop:PIPE3|Temp[57]              ; flipflop:PIPE4|Temp[25]                                                                                              ; clock        ; clock       ; 0.000        ; -0.006     ; 0.671      ;
+; 0.525 ; flipflop:PIPE3|Temp[58]              ; flipflop:PIPE4|Temp[26]                                                                                              ; clock        ; clock       ; 0.000        ; -0.006     ; 0.671      ;
+; 0.529 ; flipflop:PIPE3|Temp[55]              ; flipflop:PIPE4|Temp[23]                                                                                              ; clock        ; clock       ; 0.000        ; -0.004     ; 0.677      ;
+; 0.532 ; flipflop:PIPE3|Temp[39]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg0 ; clock        ; clock       ; 0.000        ; 0.078      ; 0.748      ;
+; 0.532 ; flipflop:PIPE2|Temp[54]              ; flipflop:PIPE3|Temp[17]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.684      ;
+; 0.539 ; flipflop:PIPE3|Temp[11]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a4~porta_datain_reg2   ; clock        ; clock       ; 0.000        ; 0.087      ; 0.764      ;
+; 0.540 ; flipflop:PIPE3|Temp[47]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg8 ; clock        ; clock       ; 0.000        ; 0.067      ; 0.745      ;
+; 0.543 ; flipflop:PIPE3|Temp[7]               ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg2   ; clock        ; clock       ; 0.000        ; 0.079      ; 0.760      ;
+; 0.543 ; flipflop:PIPE3|Temp[39]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg0 ; clock        ; clock       ; 0.000        ; 0.082      ; 0.763      ;
+; 0.545 ; flipflop:PIPE3|Temp[41]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg2 ; clock        ; clock       ; 0.000        ; 0.067      ; 0.750      ;
+; 0.548 ; flipflop:PIPE3|Temp[47]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a20~porta_address_reg8 ; clock        ; clock       ; 0.000        ; 0.071      ; 0.757      ;
+; 0.569 ; flipflop:PIPE2|Temp[23]              ; flipflop:PIPE3|Temp[2]                                                                                               ; clock        ; clock       ; 0.000        ; -0.001     ; 0.720      ;
+; 0.577 ; flipflop:PIPE2|Temp[72]              ; flipflop:PIPE3|Temp[35]                                                                                              ; clock        ; clock       ; 0.000        ; 0.007      ; 0.736      ;
+; 0.578 ; flipflop:PIPE4|Temp[28]              ; RegBank:REGISSTRADORES|RegN:\Bank:0:RegBankx|saida[23]                                                               ; clock        ; clock       ; 0.000        ; -0.002     ; 0.728      ;
+; 0.579 ; flipflop:PIPE4|Temp[28]              ; RegBank:REGISSTRADORES|RegN:\Bank:1:RegBankx|saida[23]                                                               ; clock        ; clock       ; 0.000        ; -0.002     ; 0.729      ;
+; 0.579 ; flipflop:PIPE2|Temp[49]              ; flipflop:PIPE3|Temp[12]                                                                                              ; clock        ; clock       ; 0.000        ; -0.020     ; 0.711      ;
+; 0.589 ; flipflop:PIPE4|Temp[18]              ; RegBank:REGISSTRADORES|RegN:\Bank:21:RegBankx|saida[13]                                                              ; clock        ; clock       ; 0.000        ; 0.011      ; 0.752      ;
+; 0.591 ; flipflop:PIPE4|Temp[18]              ; RegBank:REGISSTRADORES|RegN:\Bank:29:RegBankx|saida[13]                                                              ; clock        ; clock       ; 0.000        ; 0.011      ; 0.754      ;
+; 0.601 ; flipflop:PIPE4|Temp[14]              ; RegBank:REGISSTRADORES|RegN:\Bank:21:RegBankx|saida[9]                                                               ; clock        ; clock       ; 0.000        ; 0.011      ; 0.764      ;
+; 0.604 ; flipflop:PIPE4|Temp[14]              ; RegBank:REGISSTRADORES|RegN:\Bank:29:RegBankx|saida[9]                                                               ; clock        ; clock       ; 0.000        ; 0.011      ; 0.767      ;
+; 0.607 ; flipflop:PIPE4|Temp[25]              ; RegBank:REGISSTRADORES|RegN:\Bank:2:RegBankx|saida[20]                                                               ; clock        ; clock       ; 0.000        ; 0.004      ; 0.763      ;
+; 0.608 ; flipflop:PIPE4|Temp[25]              ; RegBank:REGISSTRADORES|RegN:\Bank:0:RegBankx|saida[20]                                                               ; clock        ; clock       ; 0.000        ; 0.004      ; 0.764      ;
+; 0.613 ; flipflop:PIPE3|Temp[36]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a28~porta_datain_reg3  ; clock        ; clock       ; 0.000        ; 0.077      ; 0.828      ;
+; 0.620 ; flipflop:PIPE2|Temp[91]~_Duplicate_2 ; flipflop:PIPE3|Temp[54]                                                                                              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.772      ;
+; 0.621 ; flipflop:PIPE4|Temp[70]              ; RegBank:REGISSTRADORES|RegN:\Bank:17:RegBankx|saida[29]                                                              ; clock        ; clock       ; 0.000        ; -0.005     ; 0.768      ;
+; 0.621 ; flipflop:PIPE4|Temp[70]              ; RegBank:REGISSTRADORES|RegN:\Bank:25:RegBankx|saida[29]                                                              ; clock        ; clock       ; 0.000        ; -0.005     ; 0.768      ;
+; 0.640 ; flipflop:PIPE3|Temp[24]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a16~porta_datain_reg3  ; clock        ; clock       ; 0.000        ; 0.068      ; 0.846      ;
+; 0.640 ; flipflop:PIPE3|Temp[35]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a28~porta_datain_reg2  ; clock        ; clock       ; 0.000        ; 0.057      ; 0.835      ;
+; 0.640 ; flipflop:PIPE2|Temp[70]              ; flipflop:PIPE3|Temp[33]                                                                                              ; clock        ; clock       ; 0.000        ; 0.001      ; 0.793      ;
+; 0.641 ; flipflop:PIPE3|Temp[3]               ; flipflop:PIPE4|Temp[3]                                                                                               ; clock        ; clock       ; 0.000        ; -0.009     ; 0.784      ;
+; 0.641 ; flipflop:PIPE3|Temp[106]             ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a16~porta_we_reg       ; clock        ; clock       ; 0.000        ; 0.070      ; 0.849      ;
+; 0.643 ; flipflop:PIPE3|Temp[106]             ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a12~porta_we_reg       ; clock        ; clock       ; 0.000        ; 0.071      ; 0.852      ;
+; 0.644 ; flipflop:PIPE3|Temp[46]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a24~porta_address_reg7 ; clock        ; clock       ; 0.000        ; 0.065      ; 0.847      ;
+; 0.644 ; flipflop:PIPE4|Temp[70]              ; RegBank:REGISSTRADORES|RegN:\Bank:21:RegBankx|saida[29]                                                              ; clock        ; clock       ; 0.000        ; -0.017     ; 0.779      ;
+; 0.649 ; flipflop:PIPE3|Temp[2]               ; flipflop:PIPE4|Temp[2]                                                                                               ; clock        ; clock       ; 0.000        ; 0.004      ; 0.805      ;
+; 0.649 ; flipflop:PIPE4|Temp[17]              ; RegBank:REGISSTRADORES|RegN:\Bank:1:RegBankx|saida[12]                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.801      ;
+; 0.649 ; flipflop:PIPE3|Temp[56]              ; flipflop:PIPE4|Temp[24]                                                                                              ; clock        ; clock       ; 0.000        ; 0.001      ; 0.802      ;
+; 0.649 ; flipflop:PIPE3|Temp[40]              ; flipflop:PIPE4|Temp[8]                                                                                               ; clock        ; clock       ; 0.000        ; -0.011     ; 0.790      ;
+; 0.650 ; flipflop:PIPE4|Temp[17]              ; RegBank:REGISSTRADORES|RegN:\Bank:0:RegBankx|saida[12]                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.802      ;
+; 0.650 ; flipflop:PIPE3|Temp[46]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a28~porta_address_reg7 ; clock        ; clock       ; 0.000        ; 0.062      ; 0.850      ;
+; 0.652 ; flipflop:PIPE3|Temp[18]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a12~porta_datain_reg1  ; clock        ; clock       ; 0.000        ; 0.060      ; 0.850      ;
+; 0.653 ; flipflop:PIPE3|Temp[16]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a8~porta_datain_reg3   ; clock        ; clock       ; 0.000        ; 0.060      ; 0.851      ;
+; 0.653 ; flipflop:PIPE2|Temp[65]              ; flipflop:PIPE3|Temp[28]                                                                                              ; clock        ; clock       ; 0.000        ; 0.004      ; 0.809      ;
+; 0.655 ; flipflop:PIPE3|Temp[22]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a16~porta_datain_reg1  ; clock        ; clock       ; 0.000        ; 0.071      ; 0.864      ;
+; 0.656 ; flipflop:PIPE3|Temp[0]               ; flipflop:PIPE4|Temp[0]                                                                                               ; clock        ; clock       ; 0.000        ; 0.011      ; 0.819      ;
+; 0.658 ; flipflop:PIPE3|Temp[62]              ; flipflop:PIPE4|Temp[30]                                                                                              ; clock        ; clock       ; 0.000        ; -0.005     ; 0.805      ;
+; 0.662 ; flipflop:PIPE2|Temp[60]              ; flipflop:PIPE3|Temp[23]                                                                                              ; clock        ; clock       ; 0.000        ; 0.014      ; 0.828      ;
+; 0.665 ; flipflop:PIPE3|Temp[40]              ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a8~porta_address_reg1  ; clock        ; clock       ; 0.000        ; 0.058      ; 0.861      ;
+; 0.665 ; flipflop:PIPE4|Temp[33]              ; RegBank:REGISSTRADORES|RegN:\Bank:24:RegBankx|saida[28]                                                              ; clock        ; clock       ; 0.000        ; 0.001      ; 0.818      ;
+; 0.665 ; flipflop:PIPE3|Temp[106]             ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a28~porta_we_reg       ; clock        ; clock       ; 0.000        ; 0.065      ; 0.868      ;
+; 0.667 ; flipflop:PIPE4|Temp[33]              ; RegBank:REGISSTRADORES|RegN:\Bank:16:RegBankx|saida[28]                                                              ; clock        ; clock       ; 0.000        ; 0.001      ; 0.820      ;
+; 0.668 ; flipflop:PIPE3|Temp[46]              ; flipflop:PIPE4|Temp[14]                                                                                              ; clock        ; clock       ; 0.000        ; -0.011     ; 0.809      ;
++-------+--------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                                                                                                              ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                              ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------------------------------------------------------------------+
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[37]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[37]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[38]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[38]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[39]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[39]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[40]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[40]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[41]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[41]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[42]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[42]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[43]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[43]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[44]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[44]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[45]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[45]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[46]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[46]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[47]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[47]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[48]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[48]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[49]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[49]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[50]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[50]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[51]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[51]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[52]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[52]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[53]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[53]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[54]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[54]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[55]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[55]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[56]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[56]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[57]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[57]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[58]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[58]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[59]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[59]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[60]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[60]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[61]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[61]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[62]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[62]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[63]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[63]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[64]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[64]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[65]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[65]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[66]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[66]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[67]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[67]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; flipflop:PIPE4|Temp[68]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; flipflop:PIPE4|Temp[68]                                                                                             ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg5 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg5 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg6 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg6 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg7 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg7 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg8 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg8 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg9 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_address_reg9 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a10~porta_memory_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a10~porta_memory_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a11~porta_memory_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memData:MEMORIADADOS|altsyncram:altsyncram_component|altsyncram_74d1:auto_generated|ram_block1a11~porta_memory_reg0 ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Setup Times                                                                      ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; OPERACAOFORCADA[*]   ; clock      ; 6.228 ; 6.228 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[0]  ; clock      ; 2.226 ; 2.226 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[1]  ; clock      ; 2.298 ; 2.298 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[2]  ; clock      ; 2.320 ; 2.320 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[3]  ; clock      ; 2.256 ; 2.256 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[4]  ; clock      ; 2.276 ; 2.276 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[5]  ; clock      ; 2.203 ; 2.203 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[6]  ; clock      ; 2.157 ; 2.157 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[7]  ; clock      ; 2.151 ; 2.151 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[8]  ; clock      ; 2.123 ; 2.123 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[9]  ; clock      ; 2.125 ; 2.125 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[10] ; clock      ; 2.230 ; 2.230 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[11] ; clock      ; 2.236 ; 2.236 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[12] ; clock      ; 2.066 ; 2.066 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[13] ; clock      ; 2.161 ; 2.161 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[14] ; clock      ; 2.041 ; 2.041 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[15] ; clock      ; 1.947 ; 1.947 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[16] ; clock      ; 5.507 ; 5.507 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[17] ; clock      ; 5.071 ; 5.071 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[18] ; clock      ; 5.568 ; 5.568 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[19] ; clock      ; 5.543 ; 5.543 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[20] ; clock      ; 3.403 ; 3.403 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[21] ; clock      ; 6.065 ; 6.065 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[22] ; clock      ; 6.228 ; 6.228 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[23] ; clock      ; 5.457 ; 5.457 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[24] ; clock      ; 5.785 ; 5.785 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[25] ; clock      ; 3.746 ; 3.746 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[26] ; clock      ; 3.227 ; 3.227 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[27] ; clock      ; 3.133 ; 3.133 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[28] ; clock      ; 3.119 ; 3.119 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[29] ; clock      ; 3.295 ; 3.295 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[30] ; clock      ; 3.313 ; 3.313 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[31] ; clock      ; 3.245 ; 3.245 ; Rise       ; clock           ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; OPERACAOFORCADA[*]   ; clock      ; -1.827 ; -1.827 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[0]  ; clock      ; -2.106 ; -2.106 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[1]  ; clock      ; -2.178 ; -2.178 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[2]  ; clock      ; -2.200 ; -2.200 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[3]  ; clock      ; -2.136 ; -2.136 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[4]  ; clock      ; -2.156 ; -2.156 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[5]  ; clock      ; -2.083 ; -2.083 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[6]  ; clock      ; -2.037 ; -2.037 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[7]  ; clock      ; -2.031 ; -2.031 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[8]  ; clock      ; -2.003 ; -2.003 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[9]  ; clock      ; -2.005 ; -2.005 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[10] ; clock      ; -2.110 ; -2.110 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[11] ; clock      ; -2.116 ; -2.116 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[12] ; clock      ; -1.946 ; -1.946 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[13] ; clock      ; -2.041 ; -2.041 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[14] ; clock      ; -1.921 ; -1.921 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[15] ; clock      ; -1.827 ; -1.827 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[16] ; clock      ; -2.323 ; -2.323 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[17] ; clock      ; -2.492 ; -2.492 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[18] ; clock      ; -2.382 ; -2.382 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[19] ; clock      ; -2.221 ; -2.221 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[20] ; clock      ; -2.062 ; -2.062 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[21] ; clock      ; -3.090 ; -3.090 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[22] ; clock      ; -3.005 ; -3.005 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[23] ; clock      ; -3.260 ; -3.260 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[24] ; clock      ; -2.921 ; -2.921 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[25] ; clock      ; -2.308 ; -2.308 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[26] ; clock      ; -2.238 ; -2.238 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[27] ; clock      ; -2.163 ; -2.163 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[28] ; clock      ; -1.901 ; -1.901 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[29] ; clock      ; -1.856 ; -1.856 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[30] ; clock      ; -1.984 ; -1.984 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[31] ; clock      ; -2.233 ; -2.233 ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; saida[*]   ; clock      ; 5.265 ; 5.265 ; Rise       ; clock           ;
+;  saida[0]  ; clock      ; 4.712 ; 4.712 ; Rise       ; clock           ;
+;  saida[1]  ; clock      ; 4.703 ; 4.703 ; Rise       ; clock           ;
+;  saida[2]  ; clock      ; 5.045 ; 5.045 ; Rise       ; clock           ;
+;  saida[3]  ; clock      ; 4.667 ; 4.667 ; Rise       ; clock           ;
+;  saida[4]  ; clock      ; 4.976 ; 4.976 ; Rise       ; clock           ;
+;  saida[5]  ; clock      ; 4.701 ; 4.701 ; Rise       ; clock           ;
+;  saida[6]  ; clock      ; 5.265 ; 5.265 ; Rise       ; clock           ;
+;  saida[7]  ; clock      ; 4.919 ; 4.919 ; Rise       ; clock           ;
+;  saida[8]  ; clock      ; 4.483 ; 4.483 ; Rise       ; clock           ;
+;  saida[9]  ; clock      ; 4.644 ; 4.644 ; Rise       ; clock           ;
+;  saida[10] ; clock      ; 4.460 ; 4.460 ; Rise       ; clock           ;
+;  saida[11] ; clock      ; 4.712 ; 4.712 ; Rise       ; clock           ;
+;  saida[12] ; clock      ; 4.744 ; 4.744 ; Rise       ; clock           ;
+;  saida[13] ; clock      ; 4.606 ; 4.606 ; Rise       ; clock           ;
+;  saida[14] ; clock      ; 4.373 ; 4.373 ; Rise       ; clock           ;
+;  saida[15] ; clock      ; 5.051 ; 5.051 ; Rise       ; clock           ;
+;  saida[16] ; clock      ; 4.727 ; 4.727 ; Rise       ; clock           ;
+;  saida[17] ; clock      ; 4.894 ; 4.894 ; Rise       ; clock           ;
+;  saida[18] ; clock      ; 4.629 ; 4.629 ; Rise       ; clock           ;
+;  saida[19] ; clock      ; 4.578 ; 4.578 ; Rise       ; clock           ;
+;  saida[20] ; clock      ; 4.976 ; 4.976 ; Rise       ; clock           ;
+;  saida[21] ; clock      ; 4.583 ; 4.583 ; Rise       ; clock           ;
+;  saida[22] ; clock      ; 4.481 ; 4.481 ; Rise       ; clock           ;
+;  saida[23] ; clock      ; 4.281 ; 4.281 ; Rise       ; clock           ;
+;  saida[24] ; clock      ; 4.754 ; 4.754 ; Rise       ; clock           ;
+;  saida[25] ; clock      ; 4.696 ; 4.696 ; Rise       ; clock           ;
+;  saida[26] ; clock      ; 4.517 ; 4.517 ; Rise       ; clock           ;
+;  saida[27] ; clock      ; 4.823 ; 4.823 ; Rise       ; clock           ;
+;  saida[28] ; clock      ; 4.924 ; 4.924 ; Rise       ; clock           ;
+;  saida[29] ; clock      ; 4.240 ; 4.240 ; Rise       ; clock           ;
+;  saida[30] ; clock      ; 4.442 ; 4.442 ; Rise       ; clock           ;
+;  saida[31] ; clock      ; 4.370 ; 4.370 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; saida[*]   ; clock      ; 3.719 ; 3.719 ; Rise       ; clock           ;
+;  saida[0]  ; clock      ; 4.048 ; 4.048 ; Rise       ; clock           ;
+;  saida[1]  ; clock      ; 4.119 ; 4.119 ; Rise       ; clock           ;
+;  saida[2]  ; clock      ; 4.853 ; 4.853 ; Rise       ; clock           ;
+;  saida[3]  ; clock      ; 4.114 ; 4.114 ; Rise       ; clock           ;
+;  saida[4]  ; clock      ; 4.221 ; 4.221 ; Rise       ; clock           ;
+;  saida[5]  ; clock      ; 4.112 ; 4.112 ; Rise       ; clock           ;
+;  saida[6]  ; clock      ; 4.470 ; 4.470 ; Rise       ; clock           ;
+;  saida[7]  ; clock      ; 4.124 ; 4.124 ; Rise       ; clock           ;
+;  saida[8]  ; clock      ; 4.304 ; 4.304 ; Rise       ; clock           ;
+;  saida[9]  ; clock      ; 3.974 ; 3.974 ; Rise       ; clock           ;
+;  saida[10] ; clock      ; 3.935 ; 3.935 ; Rise       ; clock           ;
+;  saida[11] ; clock      ; 4.050 ; 4.050 ; Rise       ; clock           ;
+;  saida[12] ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  saida[13] ; clock      ; 3.908 ; 3.908 ; Rise       ; clock           ;
+;  saida[14] ; clock      ; 4.362 ; 4.362 ; Rise       ; clock           ;
+;  saida[15] ; clock      ; 4.107 ; 4.107 ; Rise       ; clock           ;
+;  saida[16] ; clock      ; 4.064 ; 4.064 ; Rise       ; clock           ;
+;  saida[17] ; clock      ; 4.371 ; 4.371 ; Rise       ; clock           ;
+;  saida[18] ; clock      ; 3.980 ; 3.980 ; Rise       ; clock           ;
+;  saida[19] ; clock      ; 3.913 ; 3.913 ; Rise       ; clock           ;
+;  saida[20] ; clock      ; 4.398 ; 4.398 ; Rise       ; clock           ;
+;  saida[21] ; clock      ; 4.088 ; 4.088 ; Rise       ; clock           ;
+;  saida[22] ; clock      ; 3.845 ; 3.845 ; Rise       ; clock           ;
+;  saida[23] ; clock      ; 3.719 ; 3.719 ; Rise       ; clock           ;
+;  saida[24] ; clock      ; 4.168 ; 4.168 ; Rise       ; clock           ;
+;  saida[25] ; clock      ; 4.025 ; 4.025 ; Rise       ; clock           ;
+;  saida[26] ; clock      ; 4.024 ; 4.024 ; Rise       ; clock           ;
+;  saida[27] ; clock      ; 4.584 ; 4.584 ; Rise       ; clock           ;
+;  saida[28] ; clock      ; 4.167 ; 4.167 ; Rise       ; clock           ;
+;  saida[29] ; clock      ; 3.855 ; 3.855 ; Rise       ; clock           ;
+;  saida[30] ; clock      ; 3.927 ; 3.927 ; Rise       ; clock           ;
+;  saida[31] ; clock      ; 4.233 ; 4.233 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -10.314   ; 0.241 ; N/A      ; N/A     ; -2.000              ;
+;  clock           ; -10.314   ; 0.241 ; N/A      ; N/A     ; -2.000              ;
+; Design-wide TNS  ; -4852.045 ; 0.0   ; 0.0      ; 0.0     ; -2116.28            ;
+;  clock           ; -4852.045 ; 0.000 ; N/A      ; N/A     ; -2116.280           ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; OPERACAOFORCADA[*]   ; clock      ; 12.769 ; 12.769 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[0]  ; clock      ; 3.988  ; 3.988  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[1]  ; clock      ; 4.114  ; 4.114  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[2]  ; clock      ; 4.227  ; 4.227  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[3]  ; clock      ; 4.039  ; 4.039  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[4]  ; clock      ; 4.102  ; 4.102  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[5]  ; clock      ; 3.962  ; 3.962  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[6]  ; clock      ; 3.880  ; 3.880  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[7]  ; clock      ; 3.910  ; 3.910  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[8]  ; clock      ; 3.830  ; 3.830  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[9]  ; clock      ; 3.834  ; 3.834  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[10] ; clock      ; 4.004  ; 4.004  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[11] ; clock      ; 4.004  ; 4.004  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[12] ; clock      ; 3.756  ; 3.756  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[13] ; clock      ; 3.907  ; 3.907  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[14] ; clock      ; 3.651  ; 3.651  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[15] ; clock      ; 3.498  ; 3.498  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[16] ; clock      ; 11.306 ; 11.306 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[17] ; clock      ; 10.361 ; 10.361 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[18] ; clock      ; 11.339 ; 11.339 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[19] ; clock      ; 11.303 ; 11.303 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[20] ; clock      ; 6.486  ; 6.486  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[21] ; clock      ; 12.376 ; 12.376 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[22] ; clock      ; 12.769 ; 12.769 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[23] ; clock      ; 11.078 ; 11.078 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[24] ; clock      ; 11.919 ; 11.919 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[25] ; clock      ; 7.092  ; 7.092  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[26] ; clock      ; 6.310  ; 6.310  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[27] ; clock      ; 6.107  ; 6.107  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[28] ; clock      ; 6.078  ; 6.078  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[29] ; clock      ; 6.385  ; 6.385  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[30] ; clock      ; 6.443  ; 6.443  ; Rise       ; clock           ;
+;  OPERACAOFORCADA[31] ; clock      ; 6.235  ; 6.235  ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; OPERACAOFORCADA[*]   ; clock      ; -1.827 ; -1.827 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[0]  ; clock      ; -2.106 ; -2.106 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[1]  ; clock      ; -2.178 ; -2.178 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[2]  ; clock      ; -2.200 ; -2.200 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[3]  ; clock      ; -2.136 ; -2.136 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[4]  ; clock      ; -2.156 ; -2.156 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[5]  ; clock      ; -2.083 ; -2.083 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[6]  ; clock      ; -2.037 ; -2.037 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[7]  ; clock      ; -2.031 ; -2.031 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[8]  ; clock      ; -2.003 ; -2.003 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[9]  ; clock      ; -2.005 ; -2.005 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[10] ; clock      ; -2.110 ; -2.110 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[11] ; clock      ; -2.116 ; -2.116 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[12] ; clock      ; -1.946 ; -1.946 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[13] ; clock      ; -2.041 ; -2.041 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[14] ; clock      ; -1.921 ; -1.921 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[15] ; clock      ; -1.827 ; -1.827 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[16] ; clock      ; -2.323 ; -2.323 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[17] ; clock      ; -2.492 ; -2.492 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[18] ; clock      ; -2.382 ; -2.382 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[19] ; clock      ; -2.221 ; -2.221 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[20] ; clock      ; -2.062 ; -2.062 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[21] ; clock      ; -3.090 ; -3.090 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[22] ; clock      ; -3.005 ; -3.005 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[23] ; clock      ; -3.260 ; -3.260 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[24] ; clock      ; -2.921 ; -2.921 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[25] ; clock      ; -2.308 ; -2.308 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[26] ; clock      ; -2.238 ; -2.238 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[27] ; clock      ; -2.163 ; -2.163 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[28] ; clock      ; -1.901 ; -1.901 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[29] ; clock      ; -1.856 ; -1.856 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[30] ; clock      ; -1.984 ; -1.984 ; Rise       ; clock           ;
+;  OPERACAOFORCADA[31] ; clock      ; -2.233 ; -2.233 ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; saida[*]   ; clock      ; 9.965 ; 9.965 ; Rise       ; clock           ;
+;  saida[0]  ; clock      ; 8.711 ; 8.711 ; Rise       ; clock           ;
+;  saida[1]  ; clock      ; 8.827 ; 8.827 ; Rise       ; clock           ;
+;  saida[2]  ; clock      ; 9.669 ; 9.669 ; Rise       ; clock           ;
+;  saida[3]  ; clock      ; 8.754 ; 8.754 ; Rise       ; clock           ;
+;  saida[4]  ; clock      ; 9.372 ; 9.372 ; Rise       ; clock           ;
+;  saida[5]  ; clock      ; 8.818 ; 8.818 ; Rise       ; clock           ;
+;  saida[6]  ; clock      ; 9.965 ; 9.965 ; Rise       ; clock           ;
+;  saida[7]  ; clock      ; 9.235 ; 9.235 ; Rise       ; clock           ;
+;  saida[8]  ; clock      ; 8.376 ; 8.376 ; Rise       ; clock           ;
+;  saida[9]  ; clock      ; 8.675 ; 8.675 ; Rise       ; clock           ;
+;  saida[10] ; clock      ; 8.288 ; 8.288 ; Rise       ; clock           ;
+;  saida[11] ; clock      ; 8.819 ; 8.819 ; Rise       ; clock           ;
+;  saida[12] ; clock      ; 8.948 ; 8.948 ; Rise       ; clock           ;
+;  saida[13] ; clock      ; 8.560 ; 8.560 ; Rise       ; clock           ;
+;  saida[14] ; clock      ; 8.204 ; 8.204 ; Rise       ; clock           ;
+;  saida[15] ; clock      ; 9.423 ; 9.423 ; Rise       ; clock           ;
+;  saida[16] ; clock      ; 8.820 ; 8.820 ; Rise       ; clock           ;
+;  saida[17] ; clock      ; 9.269 ; 9.269 ; Rise       ; clock           ;
+;  saida[18] ; clock      ; 8.622 ; 8.622 ; Rise       ; clock           ;
+;  saida[19] ; clock      ; 8.470 ; 8.470 ; Rise       ; clock           ;
+;  saida[20] ; clock      ; 9.402 ; 9.402 ; Rise       ; clock           ;
+;  saida[21] ; clock      ; 8.662 ; 8.662 ; Rise       ; clock           ;
+;  saida[22] ; clock      ; 8.354 ; 8.354 ; Rise       ; clock           ;
+;  saida[23] ; clock      ; 7.898 ; 7.898 ; Rise       ; clock           ;
+;  saida[24] ; clock      ; 8.920 ; 8.920 ; Rise       ; clock           ;
+;  saida[25] ; clock      ; 8.881 ; 8.881 ; Rise       ; clock           ;
+;  saida[26] ; clock      ; 8.377 ; 8.377 ; Rise       ; clock           ;
+;  saida[27] ; clock      ; 9.139 ; 9.139 ; Rise       ; clock           ;
+;  saida[28] ; clock      ; 9.149 ; 9.149 ; Rise       ; clock           ;
+;  saida[29] ; clock      ; 7.935 ; 7.935 ; Rise       ; clock           ;
+;  saida[30] ; clock      ; 8.259 ; 8.259 ; Rise       ; clock           ;
+;  saida[31] ; clock      ; 8.261 ; 8.261 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; saida[*]   ; clock      ; 3.719 ; 3.719 ; Rise       ; clock           ;
+;  saida[0]  ; clock      ; 4.048 ; 4.048 ; Rise       ; clock           ;
+;  saida[1]  ; clock      ; 4.119 ; 4.119 ; Rise       ; clock           ;
+;  saida[2]  ; clock      ; 4.853 ; 4.853 ; Rise       ; clock           ;
+;  saida[3]  ; clock      ; 4.114 ; 4.114 ; Rise       ; clock           ;
+;  saida[4]  ; clock      ; 4.221 ; 4.221 ; Rise       ; clock           ;
+;  saida[5]  ; clock      ; 4.112 ; 4.112 ; Rise       ; clock           ;
+;  saida[6]  ; clock      ; 4.470 ; 4.470 ; Rise       ; clock           ;
+;  saida[7]  ; clock      ; 4.124 ; 4.124 ; Rise       ; clock           ;
+;  saida[8]  ; clock      ; 4.304 ; 4.304 ; Rise       ; clock           ;
+;  saida[9]  ; clock      ; 3.974 ; 3.974 ; Rise       ; clock           ;
+;  saida[10] ; clock      ; 3.935 ; 3.935 ; Rise       ; clock           ;
+;  saida[11] ; clock      ; 4.050 ; 4.050 ; Rise       ; clock           ;
+;  saida[12] ; clock      ; 4.153 ; 4.153 ; Rise       ; clock           ;
+;  saida[13] ; clock      ; 3.908 ; 3.908 ; Rise       ; clock           ;
+;  saida[14] ; clock      ; 4.362 ; 4.362 ; Rise       ; clock           ;
+;  saida[15] ; clock      ; 4.107 ; 4.107 ; Rise       ; clock           ;
+;  saida[16] ; clock      ; 4.064 ; 4.064 ; Rise       ; clock           ;
+;  saida[17] ; clock      ; 4.371 ; 4.371 ; Rise       ; clock           ;
+;  saida[18] ; clock      ; 3.980 ; 3.980 ; Rise       ; clock           ;
+;  saida[19] ; clock      ; 3.913 ; 3.913 ; Rise       ; clock           ;
+;  saida[20] ; clock      ; 4.398 ; 4.398 ; Rise       ; clock           ;
+;  saida[21] ; clock      ; 4.088 ; 4.088 ; Rise       ; clock           ;
+;  saida[22] ; clock      ; 3.845 ; 3.845 ; Rise       ; clock           ;
+;  saida[23] ; clock      ; 3.719 ; 3.719 ; Rise       ; clock           ;
+;  saida[24] ; clock      ; 4.168 ; 4.168 ; Rise       ; clock           ;
+;  saida[25] ; clock      ; 4.025 ; 4.025 ; Rise       ; clock           ;
+;  saida[26] ; clock      ; 4.024 ; 4.024 ; Rise       ; clock           ;
+;  saida[27] ; clock      ; 4.584 ; 4.584 ; Rise       ; clock           ;
+;  saida[28] ; clock      ; 4.167 ; 4.167 ; Rise       ; clock           ;
+;  saida[29] ; clock      ; 3.855 ; 3.855 ; Rise       ; clock           ;
+;  saida[30] ; clock      ; 3.927 ; 3.927 ; Rise       ; clock           ;
+;  saida[31] ; clock      ; 4.233 ; 4.233 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 284321   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 284321   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 33    ; 33   ;
+; Unconstrained Input Port Paths  ; 1940  ; 1940 ;
+; Unconstrained Output Ports      ; 32    ; 32   ;
+; Unconstrained Output Port Paths ; 96    ; 96   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Dec 12 01:56:46 2018
+Info: Command: quartus_sta MIPS -c MIPS
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'MIPS.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -10.314
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -10.314     -4852.045 clock 
+Info (332146): Worst-case hold slack is 0.522
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.522         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.000     -2106.680 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.241
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.241     -1627.834 clock 
+Info (332146): Worst-case hold slack is 0.241
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.241         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.000     -2116.280 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4593 megabytes
+    Info: Processing ended: Wed Dec 12 01:56:47 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+
