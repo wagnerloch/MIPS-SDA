@@ -6,6 +6,6 @@ TO-DO LIST:
 
 - [x] ~~Criar repositório GitHub~~
 - [x] ~~Dividir tarefas~~
-- [ ] Memórias e Barreiras Temporais - Henrique
-- [ ] Estruturas de Controle - Wagner
-- [ ] Componentes - André
+- [x] Memórias e Barreiras Temporais - Henrique
+- [x] Estruturas de Controle - Wagner
+- [x] Componentes - André
